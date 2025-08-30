@@ -365,7 +365,7 @@
           </button>
           <div id="menu-dropdown" class="menu-dropdown" role="menu" aria-hidden="true">
             <a href="next.html" class="menu-item" data-role="admin" data-requires-pass="9733">Admin</a>
-            <a href="Attandance.html" class="menu-item" data-role="teacher" data-requires-pass="2015">Teacher</a>
+            <a href="Attendance.html" class="menu-item" data-role="teacher" data-requires-pass="2015">Teacher</a>
             <button type="button" id="edit-here-btn" class="menu-item" style="display:none"><i class="fas fa-lock"></i> Edit this page</button>
           </div>
         </li>
@@ -684,7 +684,7 @@
         "about-image": defaultAbout
       },
       imagesHidden: {},
-      urls: { adminHref: "admin_portal.html", teacherHref: "teacher_portal.html" },
+      urls: { adminHref: "next.html", teacherHref: "Attendance.html" },
       work: {
         cards: [
           { id:"w1", icon:"fas fa-book-open" },
@@ -857,8 +857,8 @@
     }
 
     function applyUrlsToMenu(){
-      if (adminLink) adminLink.setAttribute("href", (state.urlsData?.adminHref) || "admin_portal.html");
-      if (teacherLink) teacherLink.setAttribute("href", (state.urlsData?.teacherHref) || "teacher_portal.html");
+      if (adminLink) adminLink.setAttribute("href", (state.urlsData?.adminHref) || "next.html");
+      if (teacherLink) teacherLink.setAttribute("href", (state.urlsData?.teacherHref) || "Attendance.html");
     }
 
     // ============ Tabs ============
@@ -1309,8 +1309,8 @@
 
     // URLs Manager
     function buildUrlsManager(){
-      adminUrlInput.value = (state.urlsData && state.urlsData.adminHref) || "admin_portal.html";
-      teacherUrlInput.value = (state.urlsData && state.urlsData.teacherHref) || "teacher_portal.html";
+      adminUrlInput.value = (state.urlsData && state.urlsData.adminHref) || "next.html";
+      teacherUrlInput.value = (state.urlsData && state.urlsData.teacherHref) || "Attendance.html";
       const update = () => {
         state.urlsData = { adminHref: (adminUrlInput.value||"").trim(), teacherHref: (teacherUrlInput.value||"").trim() };
         applyUrlsToMenu();
